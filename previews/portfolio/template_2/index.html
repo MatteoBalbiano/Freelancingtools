@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Freelancer-Duo für Web-Entwicklung und Kundenbetreuung: individuelle Websites, persönlich betreut.">
+    <title>studio/duo — Web-Entwicklung & Kundenbetreuung</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="nav-container content-container">
+            <div class="logo">studio<span>/</span>duo</div>
+            <nav class="main-nav" aria-label="Hauptnavigation">
+                <ul class="nav-list">
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#services">Leistungen</a></li>
+                    <li><a href="#process">Ablauf</a></li>
+                    <li><a href="#work">Projekte</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero-section">
+            <div class="hero-container content-container">
+                <div class="hero-eyebrow-container">
+                    <span class="dot" aria-hidden="true"></span>
+                    <span class="eyebrow">Verfügbar für neue Projekte</span>
+                </div>
+                <div class="main-headline-container">
+                    <h1 class="main-headline headline">Zwei Köpfe. <span class="accent-dev">Ein Code.</span><br>Und jemand, der sich <span class="accent-care">um Sie kümmert.</span></h1>
+                </div>
+                <div class="content-text-container hero-text-container">
+                    <p class="content-text">Wir sind ein zweiköpfiges Freelancer-Team: eine Person baut Ihre Website, die andere sorgt dafür, dass Sie während des gesamten Projekts nie allein dastehen.</p>
+                </div>
+                <div class="hero-btn-container">
+                    <a href="#contact" class="btn btn-primary hero-btn">Projekt anfragen</a>
+                    <a href="#team" class="btn btn-ghost hero-btn">Team kennenlernen</a>
+                </div>
+            </div>
+        </section>
+        <section class="team-section reveal" id="team">
+            <div class="team-container content-container">
+                <div class="team-grid">
+                    <div class="team-member team-member-dev">
+                        <div class="member-tag-container">
+                            <span class="member-tag tag mono">Entwicklung</span>
+                        </div>
+                        <div class="member-avatar" aria-hidden="true">WE</div>
+                        <h3 class="member-name">Vorname Nachname</h3>
+                        <p class="member-role">Web-Entwickler:in</p>
+                        <div class="content-text-container member-text-container">
+                            <p class="member-desc content-text">Baut schnelle, saubere und wartbare Websites — von der ersten Zeile Code bis zum Live-Gang. Fokus auf Performance, Barrierefreiheit und langfristig sauberen Code.</p>
+                        </div>
+                        <ul class="member-taglist">
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>Python</li>
+                            <li>SQL</li>
+                            <li>React</li>
+                            <li>Node.js</li>
+                            <li>Responsive Design</li>
+                        </ul>
+                    </div>
+                    <div class="team-member team-member-care">
+                        <div class="member-tag-container">
+                            <span class="member-tag tag mono">Kundenbetreuung</span>
+                        </div>
+                        <div class="member-avatar" aria-hidden="true">KB</div>
+                        <h3 class="member-name">Vorname Nachname</h3>
+                        <p class="member-role">Kundenbetreuung & Projektkoordination</p>
+                        <div class="content-text-container member-text-container">
+                            <p class="member-desc content-text">Ihr fester Ansprechpartner während des gesamten Projekts: klärt Anforderungen, hält Zeitpläne im Blick und sorgt für kurze, klare Kommunikation ohne Rückfragen-Chaos.</p>
+                        </div>
+                        <ul class="member-taglist">
+                            <li>Projektplanung</li>
+                            <li>Kommunikation</li>
+                            <li>Feedback-Runden</li>
+                            <li>Terminkoordination</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="services-section" id="services">
+            <div class="services-container content-container">
+                <div class="services-headline-container content-headline-container section-header text-center">
+                    <span class="eyebrow">Leistungen</span>
+                    <h2 class="content-headline text-center">Alles, was Ihre Website braucht</h2>
+                </div>
+                <div class="services-grid reveal">
+                    <div class="service-card">
+                        <div class="service-number mono">01</div>
+                        <h3 class="service-headline">Website-Entwicklung</h3>
+                        <p class="service-desc">Individuelle Websites von der Konzeption bis zum Launch — kein Baukasten, kein Template von der Stange.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-number mono">02</div>
+                        <h3 class="service-headline">Redesign & Relaunch</h3>
+                        <p class="service-desc">Bestehende Seite überholen: moderner, schneller und leichter zu pflegen.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-number mono">03</div>
+                        <h3 class="service-headline">Wartung & Support</h3>
+                        <p class="service-desc">Laufende Betreuung nach dem Launch — Updates, kleine Anpassungen, ein Ansprechpartner.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-number mono">04</div>
+                        <h3 class="service-headline">Beratung</h3>
+                        <p class="service-desc">Sie wissen noch nicht genau, was Sie brauchen? Wir sortieren das gemeinsam mit Ihnen.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="process-section" id="process">
+            <div class="process-container content-container">
+                <div class="process-headline-container content-headline-container section-header">
+                    <span class="eyebrow">Ablauf</span>
+                    <h2 class="content-headline">So arbeiten wir zusammen</h2>
+                </div>
+                <div class="process-list reveal">
+                    <div class="process-row">
+                        <span class="process-who who-care mono">Kundenbetreuung</span>
+                        <div class="process-what">
+                            <h3 class="process-what-headline">Erstgespräch & Briefing</h3>
+                            <p class="process-what-desc">Wir klären Ziele, Umfang und Zeitrahmen — unkompliziert, ohne Fachjargon.</p>
+                        </div>
+                    </div>
+                    <div class="process-row">
+                        <span class="process-who who-dev mono">Entwicklung</span>
+                        <div class="process-what">
+                            <h3 class="process-what-headline">Konzept & Umsetzung</h3>
+                            <p class="process-what-desc">Struktur, Design und Code entstehen — mit regelmäßigen Zwischenständen zum Reinschauen.</p>
+                        </div>
+                    </div>
+                    <div class="process-row">
+                        <span class="process-who who-care mono">Kundenbetreuung</span>
+                        <div class="process-what">
+                            <h3 class="process-what-headline">Feedback-Runden</h3>
+                            <p class="process-what-desc">Ihre Rückmeldungen werden gebündelt und klar an die Entwicklung weitergegeben.</p>
+                        </div>
+                    </div>
+                    <div class="process-row">
+                        <span class="process-who who-dev mono">Entwicklung</span>
+                        <div class="process-what">
+                            <h3 class="process-what-headline">Launch & Übergabe</h3>
+                            <p class="process-what-desc">Die Website geht live — sauber getestet, dokumentiert und einsatzbereit.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="work-section" id="work">
+            <div class="work-container content-container">
+                <div class="work-headline-container content-headline-container section-header text-center">
+                    <span class="eyebrow">Projekte</span>
+                    <h2 class="content-headline text-center">Ausgewählte Arbeiten</h2>
+                </div>
+                <div class="work-grid reveal">
+                    <div class="work-card">
+                        <div class="work-img-wrapper">
+                            <div class="work-thumb">Projekt 01</div>
+                        </div>
+                        <h3 class="work-card-headline">Projektname</h3>
+                        <p class="work-card-desc">Kurze Beschreibung des Projekts.</p>
+                    </div>
+                    <div class="work-card">
+                        <div class="work-img-wrapper">
+                            <div class="work-thumb">Projekt 02</div>
+                        </div>
+                        <h3 class="work-card-headline">Projektname</h3>
+                        <p class="work-card-desc">Kurze Beschreibung des Projekts.</p>
+                    </div>
+                    <div class="work-card">
+                        <div class="work-img-wrapper">
+                            <div class="work-thumb">Projekt 03</div>
+                        </div>
+                        <h3 class="work-card-headline">Projektname</h3>
+                        <p class="work-card-desc">Kurze Beschreibung des Projekts.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contact-section" id="contact">
+            <div class="contact-container content-container">
+                <div class="contact-headline-container content-headline-container section-header">
+                    <span class="eyebrow">Kontakt</span>
+                    <h2 class="content-headline">Lassen Sie uns über Ihr Projekt sprechen.</h2>
+                </div>
+                <div class="contact-grid reveal">
+                    <div class="contact-card">
+                        <span class="contact-tag tag mono tag-care">Erster kontakt</span>
+                        <h3 class="contact-card-headline">Kundenbetreuung</h3>
+                        <div class="content-text-container contact-text-container">
+                            <p class="content-text contact-card-desc">Für Anfragen, Angebote und alles Organisatorische.</p>
+                        </div>
+                        <a class="contact-mail mail" href="mailto:hallo@studio-duo.de">hallo@studio-duo.de</a>
+                    </div>
+                    <div class="contact-card">
+                        <span class="contact-tag tag mono tag-dev">Technisches</span>
+                        <h3
+                        class="contact-card-headline">Entwicklung</h3>
+                        <div class="content-text-container contact-text-container">
+                            <p class="content-text contact-card-desc">Für konkrete technische Fragen zu laufenden Projekten.</p>
+                        </div>
+                        <a class="contact-mail mail" href="mailto:dev@studio-duo.de">dev@studio-duo.de</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section class="footer-section">
+            <div class="footer-container content-container">
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <p class="footer-brand-name">studio/duo</p>
+                        <p class="footer-tagline">Web-Entwicklung & Kundenbetreuung aus einer Hand.</p>
+                    </div>
+                    <nav class="footer-nav" aria-label="Footer-Navigation">
+                        <a href="#team">Team</a>
+                        <a href="#services">Leistungen</a>
+                        <a href="#work">Projekte</a>
+                        <a href="#contact">Kontakt</a>
+                        <a href="">Impressum</a>
+                    </nav>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 studio/duo. Alle Rechte vorbehalten.</p>
+                </div>
+            </div>
+        </section>
+    </footer>
+</body>
+</html>

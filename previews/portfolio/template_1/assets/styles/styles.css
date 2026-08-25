@@ -1,0 +1,212 @@
+/* --- GENERAL STYLES & VARIABLES --- */
+:root {
+    --info-text: rgb(170, 170, 170);
+    --acent: rgb(124, 124, 255);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html, body {
+    overflow: hidden !important;
+}
+
+/* --- LAYOUT & BACKGROUND --- */
+body {
+    margin: 0;
+    padding: 30px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #050a0f; 
+    position: relative;
+    z-index: 0;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, #1a2a3a 0%, #0a1520 45%, transparent 70%);
+    filter: blur(60px);
+    will-change: transform;
+    transform: translate(var(--orb-x, -25%), var(--orb-y, -20%)) scale(var(--orb-scale, 1));
+    transition: transform 8s ease-in-out;
+    z-index: -1;
+    opacity: 0.7;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+    position: relative;
+    z-index: 5;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(10, 21, 32, 0.4);
+    backdrop-filter: blur(15px);
+    z-index: 10;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- NAVIGATION & LINKS --- */
+a {
+    color: var(--info-text);
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 500;
+    transition: color .3s;
+}
+
+a:hover {
+    color: var(--acent);
+}
+
+.navbar-top {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+}
+
+/* --- REUSABLE CLASSES --- */
+.fade {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s ease-out;
+}
+
+.fade.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.main-headline {
+    color: white;
+    font-size: clamp(3rem, 12vw, 5rem);
+}
+
+.grey-text {
+    color: var(--info-text);
+}
+
+.icon-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 5px;
+    gap: 5px;
+}
+
+/* --- COMPONENTS --- */
+.word-slider {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60px;
+}
+
+.word-slider-item {
+    display: none;
+    font-size: 23px;
+    padding: 20px;
+    opacity: 0;
+}
+
+.word-slider-item.active {
+    display: block;
+    opacity: 1;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.skill-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 700px;
+    padding-bottom: 10px;
+}
+
+.skill-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #0a1520;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background-color .2s, transform .2s, opacity .4s ease;
+}
+
+.skill-item:hover {
+    background-color: var(--acent);
+}
+
+/* Vertikale Zentrierungskorrektur für Icons und Text innerhalb der Skills */
+.skill-item i {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    transform: translateY(1px); /* Schiebt das Icon für die perfekte optische Mitte 1px nach unten */
+}
+
+.skill-item span {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+}
+
+.skill-item.hidden {
+    display: none;
+}
+
+.skill-item.hidden.show {
+    display: flex;
+}
+
+#showMoreBtn {
+    background-color: rgb(81, 81, 165);
+    order: 99;
+}
+
+#showMoreBtn:hover {
+    background-color: var(--acent);
+}
+
+/* --- ANIMATIONS --- */
+.animate-flicker {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.end-link-list {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+    max-width: 80%;
+    white-space: nowrap;
+}

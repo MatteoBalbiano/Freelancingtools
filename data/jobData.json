@@ -1,0 +1,38 @@
+[
+  { 
+    "id": "job-1", 
+    "title": "Restaurant Webseite", 
+    "description": "Gastronomie-Template mit Menü, Kontakt und Reservierungsbereich",
+    "category": "restaurant", 
+    "date": "2026-08-05", 
+    "status": "offen",
+    "previewUrl": "./previews/gastronomie/restaurant/template_1/index.html"
+  },
+  { 
+    "id": "job-2", 
+    "title": "Freelancer Portfolio", 
+    "description": "Freelancer-Template mit Leistungen, Team und Arbeitsinfo",
+    "category": "portfolio", 
+    "date": "2026-08-10", 
+    "status": "offen",
+    "previewUrl": "./previews/portfolio/template_2/index.html"
+  },
+  { 
+    "id": "job-3", 
+    "title": "Imbiss Webseite", 
+    "description": "Food-Service Template mit Speisekarte und Lieferinfo",
+    "category": "restaurant", 
+    "date": "2026-07-22", 
+    "status": "offen",
+    "previewUrl": "./previews/gastronomie/imbiss/template_1/home/index.html"
+  },
+  {
+    "id": "job-4",
+    "title": "Portfolio Webseite",
+    "description": "Portfolio für Freelancer mit Projekten, Referenzen und Kontakt",
+    "category": "portfolio",
+    "date": "2026-08-12",
+    "status": "offen",
+    "previewUrl": "./previews/portfolio/template%201/index.html"
+  }
+]

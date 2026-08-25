@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sathutu — Sri-lankische Küche in Prenzlauer Berg</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500&family=Work+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="./main.js" defer></script>
+</head>
+<body>
+    <nav class="wb-nav-bar is-hidden" id="mainNavBar">
+        <div class="content-left">
+            <a href="#top" class="brand tracked">
+                <img class="main-logo" src="./pictures/img/sathutu_logo.webp">
+            </a>
+        </div>
+        <div class="content-center" id="nav-links">
+            <a href="#about">Über uns</a>
+            <a href="#menu">Menü</a>
+            <a href="#hours">Zeiten</a>
+            <a href="#contact">Kontakt</a>
+        </div>
+        <div class="content-right">
+            <a href="#hours" class="nav-cta">Reservieren</a>
+           <button class="burger" id="deleteJobsBtn"
+                type="button"
+                title="Menü öffnen"
+                aria-label="Menü öffnen"
+                aria-expanded="false"
+                data-action="toggle-class"
+                data-target="#nav-links"
+                data-class="is-open">
+                Menü
+            </button>
+        </div>
+    </nav>
+    <header>
+        <section class="hero" id="top" data-toggle="#mainNavBar">
+            <div class="hero-slider" aria-hidden="true">
+                <div class="slide slide-1">
+                    <img src="" alt="">
+                </div>
+                <div class="slide slide-2"></div>
+                <div class="slide slide-3"></div>
+                <div class="slide slide-4"></div>
+            </div>
+            <div class="hero-overlay" aria-hidden="true"></div>
+            <div class="hero-content">
+                <div class="eyebrow tracked">Prenzlauer Berg · Berlin</div>
+                <h1 class="tracked">Sathutu</h1>
+                <p class="sub">Sri-lankisch inspirierte Küche, gebaut auf den Prinzipien der Fine Dining Tradition — mit
+                    dem, was die Saison uns gerade schenkt.</p>
+            </div>
+            <div class="scroll-cue">
+                <a href="#firstDevider">
+                    <span>Scroll</span>
+                    <span class="stem"></span>
+                </a>
+            </div>
+        </section>
+        <div id="headerAnchor" class="header-anchor anchor"></div>
+    </header>
+    <main>
+        <div class="divider" id="firstDevider">
+            <span class="rule"></span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M12 2 C12 2 4 8 4 14 C4 18.4 7.6 22 12 22 C16.4 22 20 18.4 20 14 C20 8 12 2 12 2 Z" />
+                <path d="M12 6 V 20" stroke-width="0.75" />
+            </svg>
+            <span class="rule"></span>
+        </div>
+        <section id="about">
+            <div class="wrap about">
+                <div class="about-image" role="img" aria-label="Blick in die Küche von Sathutu"></div>
+                <div class="about-text">
+                    <div class="eyebrow tracked">Über uns</div>
+                    <h2 style="margin-bottom:26px; font-size:clamp(26px,3vw,36px); letter-spacing:0.04em;">Eine Küche
+                        zwischen zwei Welten</h2>
+                    <p>Sathutu liegt mitten im pulsierenden Prenzlauer Berg. Unsere Küche verbindet die Aromen Sri Lankas —
+                        Curryblatt, Kardamom, Kokos, Tamarinde — mit der Präzision und Produktverliebtheit der europäischen
+                        Fine-Dining-Küche.</p>
+                    <div class="quote">"Sathutu" bedeutet auf Singhalesisch Zufriedenheit — genau das, was wir mit jedem
+                        Teller erreichen wollen.</div>
+                    <p>Wir arbeiten mit regionalen Erzeugern aus Brandenburg und importieren nur, was sich nicht ersetzen
+                        lässt: seltene Gewürze direkt von kleinen Farmen aus Sri Lanka. Das Ergebnis sind Gerichte, die
+                        vertraut und überraschend zugleich sind.</p>
+                </div>
+            </div>
+        </section>
+        <div class="divider">
+            <span class="rule"></span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M12 2 C12 2 4 8 4 14 C4 18.4 7.6 22 12 22 C16.4 22 20 18.4 20 14 C20 8 12 2 12 2 Z" />
+                <path d="M12 6 V 20" stroke-width="0.75" />
+            </svg>
+            <span class="rule"></span>
+        </div>
+        <section id="menu">
+            <div class="wrap">
+                <div class="section-head">
+                    <div class="eyebrow tracked">Saisonal</div>
+                    <h2>Unsere Speisekarte</h2>
+                </div>
+                <div class="menu-tabs">
+                    <button class="active" data-tab="starters">Short Eats</button>
+                    <button data-tab="curries">Curries &amp; Hauptgänge</button>
+                    <button data-tab="desserts">Desserts</button>
+                    <button data-tab="drinks">Getränke</button>
+                </div>
+                <div class="menu-panel active" id="starters">
+                    <div class="menu-item">
+                        <span class="num">01</span>
+                        <div class="name-block">
+                            <div class="name">Isso Wade</div>
+                            <div class="desc">Knusprige Linsen-Kräcker mit Garnelen, Curryblatt und Kokoschutney</div>
+                        </div>
+                        <span class="price">14 €</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="num">02</span>
+                        <div class="name-block">
+                            <div class="name">Kottu-Tartar</div>
+                            <div class="desc">Fein gehacktes Rindertatar mit gerösteten Roti-Streifen und Pol Sambol</div>
+                        </div>
+                        <span class="price">17 €</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="num">03</span>
+                        <div class="name-block">
+                            <div class="name">Manioc Chips</div>
+                            <div class="desc">Maniok-Chips, Tamarinde-Dattel-Glasur, gerösteter Kokos</div>
+                        </div>
+                        <span class="price">9 €</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="num">04</span>
+                        <div class="name-block">
+                            <div class="name">Jaffna-Austern</div>
+                            <div class="desc">Austern mit Chili-Limetten-Sambol und Currylauch-Öl</div>
+                        </div>
+                        <span class="price">19 €</span>
+                    </div>
+                </div>
+                <div class="menu-panel" id="curries">
+                    <div class="menu-item">
+                        <span class="num">05</span>
+                        <div class="name-block">
+                            <div class="name">Schwarzes Krabbencurry</div>
+                            <div class="desc">Sri-lankisches Roastcurry mit Krabbe, geröstetem Kokos und Hopper</div>
+                        </div>
+                        <span class="price">36 €</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="num">06</span>
+                        <div class="name-block">
+                            <div class="name">Kokos-Jackfruit-Curry</div>
+                            <div class="desc">Junge Jackfrucht, grüne Chili, Kokosmilch, Basmatireis (vegan)</div>
+                        </div>
+                        <span class="price">24 €</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="num">07</span>
+                        <div class="name-block">
+                            <div class="name">Entenbrust "Prenzlauer Berg"</div>
+                            <div class="desc">Gebeizte Entenbrust, Kardamom-Jus, gegrillte Ananas, Curryblatt-Öl</div>
+                        </div>
+                        <span class="price">32 €</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="num">08</span>
+                        <div class="name-block">
+                            <div class="name">Lamm-Kottu</div>
+                            <div class="desc">Geschmortes Lamm, handgeschnittener Godamba-Roti, Wintergemüse</div>
+                        </div>
+                        <span class="price">29 €</span>
+                    </div>
+                </div>
+                <div class="menu-panel" id="desserts">
+                    <div class="menu-item">
+                        <span class="num">09</span>
+                        <div class="name-block">
+                            <div class="name">Watalappan</div>
+                            <div class="desc">Palmzucker-Pudding, Kardamom, geröstete Cashews</div>
+                        </div>
+                        <span class="price">11 €</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="num">10</span>
+                        <div class="name-block">
+                            <div class="name">Kokos-Sorbet</div>
+                            <div class="desc">Hausgemachtes Sorbet, Passionsfrucht, Curryblatt-Karamell</div>
+                        </div>
+                        <span class="price">9 €</span>
+                    </div>
+                </div>
+                <div class="menu-panel" id="drinks">
+                    <div class="menu-item">
+                        <span class="num">11</span>
+                        <div class="name-block">
+                            <div class="name">Ceylon-Arrack Sour</div>
+                            <div class="desc">Ceylon Arrack, Limette, Kardamomsirup</div>
+                        </div>
+                        <span class="price">13 €</span>
+                    </div>
+                    <div class="menu-item">
+                        <span class="num">12</span>
+                        <div class="name-block">
+                            <div class="name">Curryblatt-Gin Tonic</div>
+                            <div class="desc">Hausinfundierter Gin, Tonic, frisches Curryblatt</div>
+                        </div>
+                        <span class="price">12 €</span>
+                    </div>
+                </div>
+                <p class="menu-note">Unsere Karte wechselt mit der Saison. Bitte informieren Sie uns über Allergien und
+                    Unverträglichkeiten.</p>
+            </div>
+        </section>
+        <section>
+            <div class="wrap gallery" aria-hidden="true">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </section>
+        <div class="divider">
+            <span class="rule"></span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M12 2 C12 2 4 8 4 14 C4 18.4 7.6 22 12 22 C16.4 22 20 18.4 20 14 C20 8 12 2 12 2 Z" />
+                <path d="M12 6 V 20" stroke-width="0.75" />
+            </svg>
+            <span class="rule"></span>
+        </div>
+        <section id="hours">
+            <div class="wrap info-grid">
+                <div>
+                    <div class="eyebrow tracked">Öffnungszeiten</div>
+                    <h2 style="font-size:clamp(26px,3vw,36px); letter-spacing:0.04em; margin-top:14px;">Wann wir für Sie da
+                        sind</h2>
+                    <div class="hours-list">
+                        <div class="hours-row closed"><span>Sonntag</span><span>Geschlossen</span></div>
+                        <div class="hours-row closed"><span>Montag</span><span>Geschlossen</span></div>
+                        <div class="hours-row closed"><span>Dienstag</span><span>Geschlossen</span></div>
+                        <div class="hours-row"><span>Mittwoch</span><span>18:00 – 23:00</span></div>
+                        <div class="hours-row"><span>Donnerstag</span><span>18:00 – 23:00</span></div>
+                        <div class="hours-row"><span>Freitag</span><span>18:00 – 23:00</span></div>
+                        <div class="hours-row"><span>Samstag</span><span>18:00 – 23:00</span></div>
+                    </div>
+                </div>
+                <div class="reserve-box">
+                    <h3>Tisch reservieren</h3>
+                    <p>Wir empfehlen eine Reservierung, besonders am Wochenende. Für Gruppen ab 8 Personen kontaktieren Sie
+                        uns bitte direkt.</p>
+                    <a href="#contact" class="reserve-btn">Reservierung</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="contact">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="brand tracked">Sathutu</span>
+                    <p>Sri-lankisch inspirierte Fine-Dining-Küche im Herzen von Prenzlauer Berg, Berlin.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Kontakt</h4>
+                    <p>Rykestraße 15, 10405 Berlin</p>
+                    <a href="mailto:info@sathutuberlin.com">info@sathutuberlin.com</a>
+                    <a href="tel:03049989796">030 499 897 96</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Folgen Sie uns</h4>
+                    <a href="https://instagram.com/sathutu.berlin" target="_blank" rel="noopener" class="social-link">
+                        <div class="social-link-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </div>
+                        <div>Instagram</div>
+                    </a>
+                    <a href="https://www.facebook.com/sathutu.berlin" target="_blank" rel="noopener" class="social-link">
+                        <div class="social-link-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </div>
+                        <div>Facebook</div>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>© <span id="currentDate"></span> Sathutu Berlin</span>
+                <span>Rykestraße 15 · 10405 Berlin</span>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

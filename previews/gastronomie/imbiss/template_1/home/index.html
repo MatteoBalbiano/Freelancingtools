@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalis Deutsche Küche</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header>
+        <section class="hero-section">
+            <div class="hero-slides">
+                <div class="hero-slide hero-slide-1 active"></div>
+                <div class="hero-slide hero-slide-2"></div>
+                <div class="hero-slide hero-slide-3"></div>
+                <div class="hero-slide hero-slide-4"></div>
+            </div>
+            <div class="wb-header-content">
+                <div class="main-headline-container">
+                    <h1 class="main-headline headline">Kalis Deutsche Küche<span class="dot">.</span></h1>
+                </div>
+                <div class="content-text-container">
+                    <p class="content-text">Currywurst, Pommes & Döner – frisch vom Grill, ehrlich gemacht und schnell auf die Hand. Mitten in Berlin.</p>
+                </div>
+                <div class="wb-header-btn-container">
+                    <a href="#lieferservice" class="reserve-btn wb-header-btn btn">Jetzt bestellen</a>
+                    <a href="speisekarte.html" class="wb-header-btn btn btn-ghost">Zur Speisekarte</a>
+                </div>
+            </div>
+            <div class="img-slider-dot-index-container header-dots">
+                <div class="img-slider-dot-index active"></div>
+                <div class="img-slider-dot-index"></div>
+                <div class="img-slider-dot-index"></div>
+                <div class="img-slider-dot-index"></div>
+            </div>
+        </section>
+    </header>
+    <main>
+        <section class="about-section" id="about">
+            <div class="about-container content-container">
+                <div class="about-info">
+                    <div class="about-headline-container content-headline-container section-header">
+                        <span class="eyebrow">Willkommen am Fenster</span>
+                        <h2 class="content-headline">Über uns</h2>
+                    </div>
+                    <div class="about-content content">
+                        <div class="content-img-container">
+                            <img src="./pictures/test_bild_about.jpg" alt="Unser Imbiss-Fenster" class="about-img content-img">
+                        </div>
+                        <div class="content-text-container">
+                            <p class="about-text content-text">
+                                Willkommen bei Kalis Deutsche Küche! Bei uns gibt's ehrliches Streetfood ohne Chichi: Currywurst mit hausgemachter Sauce, knusprige Pommes und Döner vom Drehspieß – frisch zubereitet und schnell in der Hand. Kein Tischtuch, kein Schnickschnack, einfach guter Geschmack.
+                            </p>
+                        </div>
+                        <p class="about-quote">Kein Chichi. Nur Geschmack.</p>
+                    </div>
+                </div>
+                <div class="img-slider-container">
+                    <div class="wrapper">
+                        <div class="img-slider-item">
+                            <img class="slider-img" src="./pictures/test_bild_about.jpg" alt="Currywurst mit Pommes">
+                            <p class="img-slider-text">Currywurst mit hausgemachter Sauce & Pommes</p>
+                        </div>
+                        <div class="img-slider-item">
+                            <img class="slider-img" src="./pictures/example_menu_test.jpg" alt="Döner vom Drehspieß">
+                            <p class="img-slider-text">Döner frisch vom Spieß geschnitten</p>
+                        </div>
+                        <div class="img-slider-item">
+                            <img class="slider-img" src="./pictures/test_background_image.webp" alt="Unser Imbiss von außen">
+                            <p class="img-slider-text">Unser Fenster – schnell erreichbar, kurze Wege</p>
+                        </div>
+                        <div class="img-slider-item">
+                            <img class="slider-img" src="./pictures/specials_menu_test.webp" alt="Frischer Snack-Salat">
+                            <p class="img-slider-text">Leichte Snacks für zwischendurch</p>
+                        </div>
+                    </div>
+                    <div class="img-slider-dot-index-container slider-dots">
+                        <div class="img-slider-dot-index active"></div>
+                        <div class="img-slider-dot-index"></div>
+                        <div class="img-slider-dot-index"></div>
+                        <div class="img-slider-dot-index"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="menu-section" id="menu">
+            <div class="menu-container content-container">
+                <div class="menu-headline-container section-header text-center">
+                    <span class="eyebrow">Für jeden Hunger</span>
+                    <h2 class="content-headline text-center">Unsere Klassiker</h2>
+                </div>
+                <div class="menu-selection">
+                    <div class="menu-choice">
+                        <div class="menu-img-wrapper">
+                            <img src="./pictures/kinder_menu_test.jpg" alt="Kids-Snack">
+                            <div class="menu-choice-overlay">
+                                <p class="menu-choice-desc">Kleine Portionen für kleine Gäste – mild und kinderfreundlich.</p>
+                            </div>
+                        </div>
+                        <h3 class="menu-choice-headline">Kids-Snack</h3>
+                    </div>
+                    <div class="menu-choice">
+                        <div class="menu-img-wrapper">
+                            <img src="./pictures/example_menu_test.jpg" alt="Grill-Klassiker">
+                            <div class="menu-choice-overlay">
+                                <p class="menu-choice-desc">Currywurst, Döner & Bratwurst – frisch vom Grill auf die Hand.</p>
+                            </div>
+                        </div>
+                        <h3 class="menu-choice-headline">Grill-Klassiker</h3>
+                    </div>
+                    <div class="menu-choice">
+                        <div class="menu-img-wrapper">
+                            <img src="./pictures/specials_menu_test.webp" alt="Extras & Beilagen">
+                            <div class="menu-choice-overlay">
+                                <p class="menu-choice-desc">Pommes, Salate & Saucen – die perfekte Ergänzung zu deinem Snack.</p>
+                            </div>
+                        </div>
+                        <h3 class="menu-choice-headline">Extras & Beilagen</h3>
+                    </div>
+                </div>
+                <div class="menu-cta">
+                    <a href="speisekarte.html" class="menu-cta-link">Komplette Speisekarte ansehen →</a>
+                </div>
+            </div>
+        </section>
+        <section class="delivery-section" id="lieferservice">
+            <div class="delivery-container content-container">
+                <div class="delivery-headline-container section-header text-center">
+                    <span class="eyebrow">Bequem von zuhause</span>
+                    <h2 class="content-headline text-center">Lieferservice</h2>
+                    <p class="delivery-intro">Kein Bock, extra vorbeizukommen? Kein Problem – bestell deinen Kalis-Snack einfach über deine Lieferplattform und wir bringen ihn frisch zu dir nach Hause.</p>
+                </div>
+                <div class="delivery-grid">
+                    <a href="https://wolt.com" target="_blank" rel="noopener">
+                        <div class="delivery-card">
+                            <div class="delivery-icon">
+                                <img src="./pictures/delivery/wolt_icon.png" alt="">
+                            </div>
+                            <h3 class="delivery-name">Wolt</h3>
+                            <p class="delivery-desc">Schnelle Lieferung in deiner Nähe</p>
+                            <div class="delivery-divider"></div>
+                            <span class="delivery-link">Jetzt bestellen</span>
+                        </div>
+                    </a>
+                    <a href="https://www.lieferando.de" target="_blank" rel="noopener">
+                        <div class="delivery-card">
+                            <div class="delivery-icon">
+                                <img src="./pictures/delivery/liferando_icon.png" alt="">
+                            </div>
+                            <h3 class="delivery-name">Lieferando</h3>
+                            <p class="delivery-desc">Bestellen mit wenigen Klicks</p>
+                            <div class="delivery-divider"></div>
+                            <span class="delivery-link">Jetzt bestellen</span>
+                        </div>
+                    </a>
+                    <a href="https://www.ubereats.com" target="_blank" rel="noopener">
+                        <div class="delivery-card">
+                            <div class="delivery-icon">
+                                <img src="./pictures/delivery/ubereats_icon.png" alt="">
+                            </div>
+                            <h3 class="delivery-name">Uber Eats</h3>
+                            <p class="delivery-desc">Lieferung direkt vor die Tür</p>
+                            <div class="delivery-divider"></div>
+                            <span class="delivery-link">Jetzt bestellen</span>
+                        </div>
+                    </a>
+                </div>
+                <p class="delivery-note">Lieber selbst abholen? Ruf uns kurz an – <strong>dein Snack wartet fertig verpackt am Fenster auf dich.</strong></p>
+            </div>
+        </section>
+        <section class="location-section" id="location">
+            <div class="location-container content-container">
+                <div class="location-headline-container section-header">
+                    <span class="eyebrow">Besuchen Sie uns</span>
+                    <h2 class="content-headline">Sie finden uns hier!</h2>
+                </div>
+                <div class="map-container">
+                    <div class="maps-location-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2428.409222718118!2d13.404954!3d52.520007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTLCsDMxJzEyLjAiTiAxM8KwMjQnMTcuOCJF!5e0!3m2!1sde!2sde!4v1625000000000!5m2!1sde!2sde" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                    </div>
+                    <div class="opening-table-container">
+                        <h3 class="table-headline">Öffnungszeiten</h3>
+                        <ul class="opening-list">
+                            <li class="opening-row">
+                                <span class="day">Montag – Donnerstag</span>
+                                <span class="dots" aria-hidden="true"></span>
+                                <span class="time">11:00 – 22:00 Uhr</span>
+                            </li>
+                            <li class="opening-row">
+                                <span class="day">Freitag & Samstag</span>
+                                <span class="dots" aria-hidden="true"></span>
+                                <span class="time">11:00 – 02:00 Uhr</span>
+                            </li>
+                            <li class="opening-row">
+                                <span class="day">Sonntag & Feiertage</span>
+                                <span class="dots" aria-hidden="true"></span>
+                                <span class="time">12:00 – 22:00 Uhr</span>
+                            </li>
+                            <li class="opening-row rest-day">
+                                <span class="day">Küche</span>
+                                <span class="dots" aria-hidden="true"></span>
+                                <span class="time">durchgehend geöffnet</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section class="footer-section">
+            <div class="footer-container content-container">
+                <div class="footer-top">
+                    <div class="footer-brand">
+                        <p class="footer-brand-name">Kalis Deutsche Küche</p>
+                        <p class="footer-tagline">Currywurst, Pommes & Döner – ehrliches Streetfood mitten in Berlin.</p>
+                    </div>
+                    <nav class="footer-nav" aria-label="Footer-Navigation">
+                        <a href="#about">Über uns</a>
+                        <a href="#menu">Menü</a>
+                        <a href="#lieferservice">Lieferservice</a>
+                        <a href="#location">Standort</a>
+                    </nav>
+                </div>
+                <div class="endlinks-container">
+                    <div class="footer-legal-links">
+                        <a href="/impressum.html" class="footer-link">Impressum</a>
+                        <a href="/agb.html" class="footer-link">AGB</a>
+                        <a href="/datenschutz.html" class="footer-link">Datenschutz</a>
+                    </div>
+                    <div class="footer-social-links">
+                        <a href="https://instagram.com" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <p>&copy; 2026 Kalis Deutsche Küche. Alle Rechte vorbehalten.</p>
+                </div>
+            </div>
+        </section>
+    </footer>
+</body>
+</html>

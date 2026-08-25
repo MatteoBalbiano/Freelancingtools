@@ -1,0 +1,692 @@
+/* ==========================================================================
+   Website Übersicht – Dashboard Styles
+   Konzept: Jede Karte ist im Kern eine Website – die Job-Liste zitiert
+   deshalb dezent die Browser-Fenster-Optik (Ampel-Punkte oben links) als
+   Signature-Element. Ruhige Statskarten, ein Akzent (Indigo), zwei klare
+   Status-Farben (Amber = offen, Grün = erledigt).
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+/* ---------- 1. Variablendefinition ---------- */
+:root {
+    /* Farben */
+    --bg: #F3F4F7;
+    --surface: #FFFFFF;
+    --surface-sunken: #EBEDF2;
+    --ink: #171923;
+    --ink-muted: #6B7280;
+    --border: #E3E5EA;
+    --border-strong: #C9CCD6;
+
+    --accent: #4F46E5;
+    --accent-hover: #4338CA;
+    --accent-soft: #EEF0FF;
+
+    --status-open-bg: #FEF3C7;
+    --status-open-text: #B45309;
+    --status-done-bg: #DCFCE7;
+    --status-done-text: #15803D;
+
+    --tab-restaurant: #DC6B4F;
+    --tab-steuerberater: #4F46E5;
+    --tab-anwalt: #4B5563;
+    --tab-portfolio: #0EA5A4;
+    --tab-default: var(--ink-muted);
+
+    /* Typografie */
+    --font-display: 'Manrope', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-body: 'Inter', sans-serif;
+
+    /* Layout */
+    --radius: 14px;
+    --content-width: 1080px;
+    --shadow-card: 0 1px 2px rgba(23, 25, 35, 0.04), 0 4px 12px rgba(23, 25, 35, 0.04);
+}
+
+/* ---------- 2. Reset ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { margin: 0; font-family: var(--font-display); color: var(--ink); }
+p { margin: 0; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; padding: 0; }
+svg { display: block; }
+
+div svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* Verlässlicher globaler Hebel: unabhängig davon, welche Klasse ein Element
+   sonst trägt (z. B. .list-btn { display:inline-flex }), gewinnt [hidden]
+   immer. */
+[hidden] {
+    display: none !important;
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        transition-duration: 0.001ms !important;
+    }
+}
+
+/* ---------- 3. Utility / Mehrfach verwendete Klassen ---------- */
+.content-container,
+.content-contaienr {
+    width: 100%;
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.content-left {
+    display: flex;
+    align-items: center;
+}
+
+.content-rigth {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+}
+
+.headline-subtext {
+    color: var(--ink-muted);
+    font-size: 14px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.is-hidden {
+    opacity: 0;
+    position: absolute;
+    user-select: none;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.is-disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* ---------- 4. Layout & Struktur ---------- */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    padding-bottom: 64px;
+}
+
+section { width: 100%; }
+
+/* ---------- 5. Header ---------- */
+header {
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+}
+
+.wb-main-headline-container {
+    padding: 36px 0;
+}
+
+.main-headline {
+    font-size: clamp(26px, 3.6vw, 34px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+}
+
+.main-headline-sub-text {
+    margin-top: 6px;
+    color: var(--ink-muted);
+    font-size: 15px;
+}
+
+/* ---------- 6. Sektions-Überschriften ---------- */
+.content-headline-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.content-headline {
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+/* ---------- 7. Bearbeiten-Leiste (Edit-Modus) ----------
+   Schwebende Pill unten mittig. Save ist die primäre Aktion (gefüllt,
+   Akzentfarbe), Close die sekundäre (ruhig, outline) – klare Hierarchie
+   statt zweier gleichwertig aussehender Buttons. */
+.edit-btn-list {
+    position: fixed;
+    left: 50%;
+    bottom: 24px;
+    transform: translateX(-50%) translateY(6px);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    box-shadow: 0 12px 32px rgba(23, 25, 35, 0.16), 0 2px 8px rgba(23, 25, 35, 0.08);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.edit-btn-list:has(.edit-btn:not([hidden])) {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.edit-btn,
+.list-btn {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--ink-muted);
+    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease, transform 0.1s ease;
+}
+
+.edit-btn-list .edit-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+}
+
+.list-btn:hover,
+.edit-btn:hover {
+    border-color: var(--border-strong);
+    color: var(--ink);
+    background: var(--surface-sunken);
+}
+
+.save-btn {
+    background: rgb(152, 152, 255);
+    color: #FFFFFF;
+}
+
+.save-btn:hover {
+    background: rgb(116, 116, 255);
+    color: #FFFFFF;
+}
+
+.close-btn {
+    color: var(--ink-muted);
+}
+
+.close-btn:hover {
+    background: var(--surface-sunken);
+    border-color: var(--border-strong);
+    color: var(--ink);
+}
+
+.list-btn svg,
+.edit-btn svg { width: 18px; height: 18px; }
+
+/* ---------- 8. Überblick / Statskarten ----------
+   Ruhig gehalten, damit das Signature-Element der Job-Liste (Abschnitt 10)
+   die einzige auffällige Geste auf der Seite bleibt. */
+.stats-card-headline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.card-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.stast-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-card);
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.stats-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    min-width: 0;
+}
+
+.stats-card-header svg {
+    width: 20px;
+    height: 20px;
+    color: var(--accent);
+    flex-shrink: 0;
+    padding: 10px;
+    box-sizing: content-box;
+    background: var(--accent-soft);
+    border-radius: 10px;
+}
+
+.stast-card-headline {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-muted);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.stats-card-main {
+    font-family: var(--font-display);
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+    padding-right: 20px;
+}
+
+/* Statuskarten-Akzente per Reihenfolge. .stast-card liegt direkt in
+   .card-list (keine weiteren Geschwister davor): (2) = Offene Aufträge,
+   (3) = Abgeschlossene Aufträge. */
+.stast-card:nth-of-type(2) .stats-card-main,
+.stast-card:nth-of-type(2) .stats-card-header svg {
+    color: var(--status-open-text);
+}
+.stast-card:nth-of-type(2) .stats-card-header svg {
+    background: var(--status-open-bg);
+}
+
+.stast-card:nth-of-type(3) .stats-card-main,
+.stast-card:nth-of-type(3) .stats-card-header svg {
+    color: var(--status-done-text);
+}
+.stast-card:nth-of-type(3) .stats-card-header svg {
+    background: var(--status-done-bg);
+}
+
+/* ---------- 9. Filter & Buttons ---------- */
+.filter-btn-contaienr { position: relative; }
+
+.filter-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 168px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 8px 24px rgba(23, 25, 35, 0.1);
+    padding: 6px;
+    display: none;
+    flex-direction: column;
+    gap: 2px;
+    z-index: 20;
+}
+
+.filter-btn-contaienr.is-open .filter-dropdown { display: flex; }
+
+.dropdown-item {
+    padding: 9px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    color: var(--ink);
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus-visible {
+    background: var(--surface-sunken);
+}
+
+.dropdown-item.is-active {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+/* Change: Svg statt icon einbauen  */
+
+.dropdown-item.is-active::before {
+    content: "✓ ";
+}
+
+.is-empty {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    font-weight: 800;
+}
+
+/* ---------- 10. Aufträge / Job-Liste ----------
+   Signature-Element: jede Karte zitiert eine Browser-Fensterleiste (die
+   drei Punkte oben links) – naheliegend, weil jede Karte tatsächlich eine
+   Website repräsentiert. */
+.job-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.preview-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow: hidden;
+}
+
+.preview-overlay.hidden {
+    display: none;
+}
+
+.preview-overlay-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    max-width: 1400px;
+    background: var(--surface);
+    border-radius: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 32px 80px rgba(15, 23, 42, 0.2);
+}
+
+.preview-overlay-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 22px;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+}
+
+.preview-overlay-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.open-tab-btn,
+.close-preview-btn {
+    padding: 12px 16px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    color: var(--ink);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+.job-list-item-description {
+    margin: 8px 0 0;
+    color: var(--ink-muted);
+    font-size: 13px;
+    line-height: 1.4;
+    max-width: 85%;
+}
+
+.open-tab-btn:hover,
+.close-preview-btn:hover {
+    border-color: var(--border-strong);
+    background: var(--surface-sunken);
+}
+
+.open-tab-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#previewIframe {
+    width: 100%;
+    flex: 1;
+    border: none;
+    background: var(--surface);
+}
+
+.preview-open header,
+.preview-open main,
+.preview-open footer {
+    display: none;
+}
+
+.job-list-item {
+    position: relative;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--tab-color, var(--tab-default));
+    border-radius: 10px;
+    box-shadow: var(--shadow-card);
+    padding-top: 24px;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.job-list-item:hover {
+    transform: translateY(-1px);
+    background-color: var(--surface-sunken);
+    box-shadow: 0 2px 4px rgba(23, 25, 35, 0.06), 0 10px 22px rgba(23, 25, 35, 0.07);
+}
+
+.job-list-item a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 0 20px 16px;
+}
+
+.job-list-item-headline-contaienr {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.job-list-item-headline {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+#jobDate,
+.job-list-item-headline-contaienr .headline-subtext {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.01em;
+}
+
+.job-card-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0 20px 16px;
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+    margin: 0 20px 16px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.job-card-checkbox {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    color: var(--ink-muted);
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.job-card-checkbox input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--accent);
+    cursor: pointer;
+}
+
+.job-list.edit-mode .job-card-checkbox {
+    display: inline-flex;
+}
+
+.job-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 10px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.job-status::before {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.job-status:empty {
+    display: none;
+}
+
+.job-status[data-status="offen"] {
+    background: var(--status-open-bg);
+    color: var(--status-open-text);
+}
+
+.job-status[data-status="offen"]::before {
+    background: var(--status-open-text);
+}
+
+.job-status[data-status="bearbeitet"] {
+    background: var(--status-done-bg);
+    color: var(--status-done-text);
+}
+
+.job-status[data-status="bearbeitet"]::before {
+    background: var(--status-done-text);
+}
+
+.job-list-item.is-filtered-out { display: none; }
+
+/* ---------- 11. Footer ---------- */
+footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 0;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.footer-contet-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink-muted);
+}
+
+.footer-content .content-rigth a {
+    font-size: 14px;
+    color: var(--ink-muted);
+    border-bottom: 1px solid var(--border-strong);
+    padding-bottom: 1px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.footer-content .content-rigth a:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+/* ---------- 12. Einlade-Animation (dezent) ---------- */
+.stast-card,
+.job-list-item {
+    animation: fade-up 0.4s ease both;
+}
+
+.stast-card:nth-of-type(2) { animation-delay: 0.05s; }
+.stast-card:nth-of-type(3) { animation-delay: 0.1s; }
+.job-list .job-list-item:nth-child(1) { animation-delay: 0.05s; }
+.job-list .job-list-item:nth-child(2) { animation-delay: 0.1s; }
+.job-list .job-list-item:nth-child(3) { animation-delay: 0.15s; }
+.job-list .job-list-item:nth-child(4) { animation-delay: 0.2s; }
+
+@keyframes fade-up {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------- 13. Responsive ---------- */
+@media (max-width: 860px) {
+    .card-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 560px) {
+    .wb-main-headline-container { padding: 28px 0; }
+    .content-headline-container { flex-wrap: wrap; }
+    .job-list-item a { padding: 0 16px 14px; }
+    .job-card-controls { margin: 0 16px 14px; }
+    .footer-content { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .edit-btn-list { bottom: 12px; }
+}
