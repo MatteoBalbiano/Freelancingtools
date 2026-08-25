@@ -22,7 +22,7 @@ const GITHUB_CONFIG = {
     owner: 'DEIN_GITHUB_USERNAME',      // z.B. 'max-mustermann'
     repo: 'DEIN_REPO_NAME',             // z.B. 'website-uebersicht'
     branch: 'main',                     // z.B. 'main' oder 'gh-pages'
-    path: '/data/jobData.json', // Pfad IM Repo (ohne führenden Slash)
+    path: 'data/jobData.json', // Pfad IM Repo (ohne führenden Slash)
 };
 
 function utf8ToBase64(str) {
@@ -449,7 +449,7 @@ async function initApp() {
     new UIManager();
     
     // Daten aus der JSON-Datei abrufen
-    jobsObj = await getData('/data/jobData.json');
+    jobsObj = await getData('data/jobData.json');
     
     refreshData();
     initEditButtons();
